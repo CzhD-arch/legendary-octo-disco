@@ -1,0 +1,152 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0f17;
+  --panel: #121a27;
+  --border: #273348;
+  --text: #dfe8ff;
+  --muted: #9aabc9;
+  --accent: #65b7ff;
+  --danger: #ff6b86;
+  --good: #72f5b0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #132038 0%, var(--bg) 48%);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.app {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.2rem;
+}
+
+header h1 {
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+header p {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.card {
+  background: color-mix(in srgb, var(--panel) 90%, black 10%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
+  padding: 1rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(160deg, var(--accent), #78e7ff);
+  color: #051424;
+  font-weight: 700;
+  padding: 0.6rem 0.95rem;
+  cursor: pointer;
+  margin-right: 0.6rem;
+}
+
+button:disabled {
+  background: #48556f;
+  color: #d4d9e1;
+  cursor: not-allowed;
+}
+
+.sound-toggle {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.volume-wrap {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--muted);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.players {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #2b3f5f;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  background: #101b2e;
+}
+
+.player.dead {
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+.role-tag {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.log {
+  height: 320px;
+  overflow: auto;
+  border: 1px solid #2c3e5f;
+  border-radius: 8px;
+  padding: 0.65rem;
+  background: #0d1524;
+  font-size: 0.96rem;
+}
+
+.log p {
+  margin: 0 0 0.6rem;
+  line-height: 1.35;
+}
+
+.log .note {
+  color: var(--muted);
+}
+
+.log .bad {
+  color: var(--danger);
+}
+
+.log .good {
+  color: var(--good);
+}
+
+footer {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 0.8rem;
+}

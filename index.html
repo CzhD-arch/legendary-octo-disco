@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPT Social Club: Mafia Night</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>GPT Social Club: Mafia Night</h1>
+        <p>
+          Models hang out, chat, and try to catch the hidden Mafia. Run the simulation
+          round-by-round and listen to dynamic game sounds.
+        </p>
+      </header>
+
+      <section class="controls card">
+        <div class="left">
+          <button id="startBtn">Start New Game</button>
+          <button id="nextBtn" disabled>Next Round</button>
+        </div>
+        <div class="right">
+          <label class="sound-toggle" for="soundToggle">
+            <input type="checkbox" id="soundToggle" checked />
+            Sound On
+          </label>
+          <div class="volume-wrap">
+            <label for="volume">Volume</label>
+            <input id="volume" type="range" min="0" max="100" value="70" />
+          </div>
+        </div>
+      </section>
+
+      <section class="game-grid">
+        <article class="card">
+          <h2>Lobby</h2>
+          <ul id="players" class="players"></ul>
+        </article>
+
+        <article class="card">
+          <h2>Model Chat</h2>
+          <div id="chatLog" class="log"></div>
+        </article>
+
+        <article class="card">
+          <h2>Round Events</h2>
+          <div id="eventLog" class="log"></div>
+        </article>
+      </section>
+
+      <footer>
+        <p>
+          Tip: start a game first, then click “Next Round” to progress day/night phases.
+        </p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
